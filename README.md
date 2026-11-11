@@ -5,7 +5,7 @@ Trabajo Práctico Integrador · Programación 4 · Tecnicatura Universitaria en 
 Aplicación web fullstack para un negocio de comidas: los clientes recorren la carta, arman un carrito y confirman pedidos; el administrador gestiona categorías, productos, stock, pedidos y usuarios.
 
 - **Repositorio:** <https://github.com/treynoso-codetria/food-store>
-- **Video de demostración:** <https://youtu.be/1_ovreFFDCM>
+- **Video de demostración:** <https://youtu.be/guslzpIvyn8>
 
 | Capa | Stack |
 |---|---|
