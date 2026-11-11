@@ -1,0 +1,30 @@
+# PostgreSQL para desarrollo local.
+#   Levantar:            docker compose up -d
+#   Ver estado:          docker compose ps
+#   Apagar:              docker compose down
+#   Borrar datos y empezar de cero:  docker compose down -v
+#
+# Expone el puerto 5433 de tu máquina (y no 5432) para no chocar con otro
+# Postgres que ya tengas corriendo. Coincide con backend/.env.example.
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: foodstore-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: foodstore
+      POSTGRES_PASSWORD: foodstore
+      POSTGRES_DB: foodstore_db
+      TZ: America/Argentina/Buenos_Aires
+    ports:
+      - "5433:5432"
+    volumes:
+      - foodstore_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U foodstore -d foodstore_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  foodstore_pgdata:

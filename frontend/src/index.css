@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Tokens de la marca: toldo de rotisería — albahaca, mostaza y tomate */
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+
+  --color-albahaca-50: #eef5f1;
+  --color-albahaca-100: #d5e7dc;
+  --color-albahaca-200: #a9cdb8;
+  --color-albahaca-600: #2c6a50;
+  --color-albahaca-700: #1f4d3a;
+  --color-albahaca-800: #173a2c;
+  --color-albahaca-900: #10291f;
+
+  --color-mostaza-100: #fbefd2;
+  --color-mostaza-300: #f0cc75;
+  --color-mostaza-400: #e3a92b;
+  --color-mostaza-600: #a8761a;
+
+  --color-tomate-50: #fcecea;
+  --color-tomate-600: #c2361f;
+  --color-tomate-700: #9e2a17;
+
+  --color-papel: #f7f8f5;
+  --color-tinta: #1a1f1c;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-tinta);
+    background: var(--color-papel);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-mostaza-400);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
